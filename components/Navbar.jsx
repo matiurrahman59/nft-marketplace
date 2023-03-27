@@ -4,16 +4,13 @@ import { BiMenuAltLeft, BiStoreAlt, BiUser } from 'react-icons/bi';
 
 //////////////////////////////////////////////////////////////
 // Internal Imports
-import { TextButton } from '.';
+import { Logo, TextButton } from '.';
 
 const Navbar = () => {
   return (
     <header className='main-container flex items-center justify-between px-[30px] py-5 font-semibold leading-[22.4px] text-white md:px-[50px] '>
       {/* Logo */}
-      <div className='flex items-center gap-[9px]'>
-        <BiStoreAlt className='text-primaryColor' />
-        <span className='font-spaceMono'>NFT Marketplace</span>
-      </div>
+      <Logo />
       <BiMenuAltLeft className='h-6 w-6 lg:hidden' />
 
       {/* Main Nav */}

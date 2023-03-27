@@ -1,6 +1,10 @@
 export { default as CategoriesSection } from './CategoriesSection';
+export { default as EmailFormInput } from './EmailFormInput';
+export { default as FooterSection } from './FooterSection';
 export { default as HeroSection } from './HeroSection';
+export { default as Logo } from './Logo';
 export { default as Navbar } from './Navbar';
+export { default as NewsLetterSection } from './NewsLetterSection';
 export { default as SectionHeader } from './SectionHeader';
 export { default as TextButton } from './TextButton';
 // export { default as TopCreatorSection } from './TopCreatorSection';

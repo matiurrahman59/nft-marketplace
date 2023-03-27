@@ -1,6 +1,8 @@
 import {
   CategoriesSection,
+  FooterSection,
   HeroSection,
+  NewsLetterSection,
   TrendingSection,
   WorkflowSection,
 } from '@/components';
@@ -8,10 +10,13 @@ import {
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <TrendingSection />
-      <CategoriesSection />
-      <WorkflowSection />
+      <main className='main-container px-[30px] font-sans md:px-[72px] lg:px-[115px]'>
+        <HeroSection />
+        <TrendingSection />
+        <CategoriesSection />
+        <WorkflowSection />
+        <NewsLetterSection />
+      </main>
     </>
   );
 }
