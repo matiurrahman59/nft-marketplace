@@ -188,6 +188,8 @@ export const moreNfts = [
     name: "MoonDancer",
     price: 1.63,
     bid: 0.33,
+    image: "/images/all-nft-collection/DistantGalaxy.png",
+    avatar: "/images/top-creators/Creator-1.png",
   },
   {
     id: 2,
@@ -195,6 +197,8 @@ export const moreNfts = [
     name: "Nebulakid",
     price: 1.63,
     bid: 0.33,
+    image: "/images/all-nft-collection/LifeOnEdena.png",
+    avatar: "/images/top-creators/Creator-2.png",
   },
   {
     id: 3,
@@ -202,5 +206,7 @@ export const moreNfts = [
     name: "Spaceone",
     price: 1.63,
     bid: 0.33,
+    image: "/images/all-nft-collection/AstroFiction.png",
+    avatar: "/images/top-creators/Creator-3.png",
   },
 ];
