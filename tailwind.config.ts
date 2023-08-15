@@ -23,6 +23,7 @@ const config: Config = {
       secondary: "#3B3B3B",
       label: "#858584",
       white: "#ffffff",
+      green: "#00AC4F",
       "gradient-1": "#FF6250",
       "gradient-2": "#377DF7",
       "blur-1": "#3b3b3b80",

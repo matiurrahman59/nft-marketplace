@@ -3,10 +3,11 @@ import { CgMenuLeft } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 
 import Logo from "./Logo";
+import Button from "./Button";
 
 const navLink = [
   { href: "#", title: "Marketplace" },
-  { href: "#", title: "Rankings" },
+  { href: "top-creator", title: "Rankings" },
   { href: "#", title: "Connect a wallet" },
 ];
 
@@ -31,14 +32,9 @@ const Navbar = () => {
             {item.title}
           </Link>
         ))}
-
-        <Link
-          href="#"
-          className="scale-animation flex items-center gap-3 rounded-5 bg-primary px-8 py-4 text-white"
-        >
+        <Button label="Sign Up" href="#" style="bg-primary">
           <AiOutlineUser size={20} />
-          Sign Up
-        </Link>
+        </Button>
       </div>
     </header>
   );

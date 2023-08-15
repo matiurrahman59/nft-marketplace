@@ -9,13 +9,12 @@ import { FiMail, FiEye } from "react-icons/fi";
 import SectionHeader from "@/components/SectionHeader";
 import {
   Categories,
-  createRandomUser,
   moreNfts,
   trendingCollection,
   workFlow,
+  topCreators,
 } from "../../dummy-data";
 import Button from "@/components/Button";
-import { useState } from "react";
 
 export default function Home() {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +22,16 @@ export default function Home() {
     console.log("hello there");
   };
 
-  const [data, setData] = useState(() => createRandomUser());
+  const bannerItem = (title: string, quantity: string | number) => {
+    return (
+      <div className="flex flex-col">
+        <span className="font-spaceMono text-[22px] font-bold leading-[35px] lg:text-[28px] lg:leading-[40px]">
+          {quantity}k+
+        </span>
+        <span className="lg:text-2xl lg:leading-[38px]">{title}</span>
+      </div>
+    );
+  };
 
   return (
     <main>
@@ -33,7 +41,7 @@ export default function Home() {
           <h1 className="text-[28px] font-semibold capitalize leading-10 sm:text-[38px] lg:text-[67px] lg:leading-[73px]">
             Discover digital art & Collect NFTs
           </h1>
-          <p className="pt-[10px] text-base sm:pt-5 lg:text-[22px] lg:leading-9">
+          <p className="pt-[10px] sm:pt-5 lg:text-[22px] lg:leading-[35.2px]">
             NFT marketplace UI created with Anima for Figma. Collect, buy and
             sell art from more than 20k NFT artists.
           </p>
@@ -46,33 +54,18 @@ export default function Home() {
                 href="3"
                 style="mt-5 lg:mt-[30px] bg-primary px-[50px]"
               >
-                <PiRocketLaunchThin size={20} className=" text-white" />
+                <PiRocketLaunchThin
+                  size={20}
+                  className=" text-xl"
+                  strokeWidth={3}
+                />
               </Button>
             </div>
 
             <div className="mt-5 flex items-center justify-between sm:w-[90%] lg:mt-[30px]">
-              <div className="flex flex-col text-center">
-                <span className="font-spaceMono text-[22px] font-bold leading-[35px] lg:text-[28px] lg:leading-[40px]">
-                  240k+
-                </span>
-                <span className="lg:text-2xl lg:leading-[38px]">
-                  Total Sale
-                </span>
-              </div>
-
-              <div className="flex flex-col text-center">
-                <span className="font-spaceMono text-[22px] font-bold leading-[35px] lg:text-[28px] lg:leading-[40px]">
-                  100k+
-                </span>
-                <span className="lg:text-2xl lg:leading-[38px]">Auctions</span>
-              </div>
-
-              <div className="flex flex-col text-center">
-                <span className="font-spaceMono text-[22px] font-bold leading-[35px] lg:text-[28px] lg:leading-[40px]">
-                  240k+
-                </span>
-                <span className="lg:text-2xl lg:leading-[38px]">Artists</span>
-              </div>
+              {bannerItem("Total Sale", 140)}
+              {bannerItem("Auctions", 240)}
+              {bannerItem("Artists", 340)}
             </div>
           </div>
         </div>
@@ -111,26 +104,9 @@ export default function Home() {
           </Button>
 
           <div className="mt-10 flex items-center justify-between">
-            <div className="flex flex-col text-center">
-              <span className="font-spaceMono text-[22px] font-bold">
-                240k+
-              </span>
-              <span>Total Sale</span>
-            </div>
-
-            <div className="flex flex-col text-center">
-              <span className="font-spaceMono text-[22px] font-bold">
-                100k+
-              </span>
-              <span>Auctions</span>
-            </div>
-
-            <div className="flex flex-col text-center">
-              <span className="font-spaceMono text-[22px] font-bold">
-                240k+
-              </span>
-              <span>Artists</span>
-            </div>
+            {bannerItem("Total Sale", 140)}
+            {bannerItem("Auctions", 240)}
+            {bannerItem("Artists", 340)}
           </div>
         </div>
       </section>
@@ -204,7 +180,7 @@ export default function Home() {
         </SectionHeader>
 
         <div className="space-y-5 pt-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 lg:grid-cols-3">
-          {data?.slice(0, 12).map((user) => (
+          {topCreators?.slice(0, 12).map((user) => (
             <div
               key={user.id}
               className="scale-animation flex cursor-pointer items-center gap-5 rounded-5 bg-secondary p-5 lg:flex-col lg:justify-center"
@@ -222,7 +198,7 @@ export default function Home() {
               </div>
 
               <div className="lg:text-center">
-                <span className=" text-[22px] font-semibold leading-[30px]">
+                <span className="text-[22px] font-semibold leading-[30px]">
                   {user.creatorName}
                 </span>
                 <div className="pt-1.5 lg:text-center">
@@ -238,7 +214,7 @@ export default function Home() {
         <Button
           label="View Rankings"
           href="#"
-          style="ring-2 ring-primary sm:hidden"
+          style="ring-2 ring-primary sm:hidden mt-10"
         >
           <PiRocketLaunchDuotone size={20} className="text-primary" />
         </Button>
@@ -275,9 +251,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="pb-[25px] pl-[30px] pt-5">
-                  <h5 className="font-semibold lg:text-[22px] lg:leading-[30px]">
-                    {item.title}
-                  </h5>
+                  <h5 className="font-semibold">{item.title}</h5>
                 </div>
               </div>
             </Link>
@@ -326,13 +300,13 @@ export default function Home() {
                   <span className="font-spaceMono">{item.name}</span>
                 </div>
 
-                <div className="flex  items-center justify-between pt-6 font-spaceMono text-xs text-label">
+                <div className="flex items-center justify-between pt-6 font-spaceMono">
                   <div>
-                    <p>Price</p>
+                    <span className="text-xs text-label">Price</span>
                     <p className="mt-2 text-white">{item.price} ETH</p>
                   </div>
                   <div className="flex flex-col items-end justify-end">
-                    <p>Highest Bid</p>
+                    <span className="text-xs text-label">Highest Bid</span>
                     <p className="mt-2 text-white">{item.bid} ETH</p>
                   </div>
                 </div>
@@ -351,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* highlight mashrooms section */}
-      <section className="section-padding">
+      <section>
         <div className="relative h-[593px] w-full bg-[url('/images/mashroom-sm.png')]  bg-cover sm:h-[630px] sm:bg-[url('/images/mashroom-lg.png')]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#a259ff00] to-primary" />
 
@@ -371,9 +345,9 @@ export default function Home() {
                       <span>Shroomie</span>
                     </div>
                   </div>
-                  <p className="text-[38px] font-semibold leading-[45.6px]">
+                  <h2>
                     Magic <br className="sm:hidden" /> Mashrooms
-                  </p>
+                  </h2>
                   <div className="hidden sm:inline-block">
                     <Button
                       label="See NFT"
@@ -385,34 +359,34 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-blur-1/50 rounded-5 p-[30px] backdrop-blur-sm">
+                <div className="rounded-5 bg-blur-1/50 p-[30px] backdrop-blur-sm">
                   <span className="font-spaceMono text-xs">
                     Auction ends in:
                   </span>
                   <div className="mt-[10px] flex justify-between gap-4">
                     <div>
-                      <p className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
                         59
-                      </p>
-                      <p className="font-spaceMono text-xs">Hours</p>
+                      </div>
+                      <div className="font-spaceMono text-xs">Hours</div>
                     </div>
                     <div className="text-[28px] font-semibold leading-10">
                       :
                     </div>
                     <div>
-                      <p className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
                         59
-                      </p>
-                      <p className="font-spaceMono text-xs">Minutes</p>
+                      </div>
+                      <div className="font-spaceMono text-xs">Minutes</div>
                     </div>
                     <div className="text-[28px] font-semibold leading-10">
                       :
                     </div>
                     <div>
-                      <p className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
                         59
-                      </p>
-                      <p className="font-spaceMono text-xs">Seconds</p>
+                      </div>
+                      <div className="font-spaceMono text-xs">Seconds</div>
                     </div>
                   </div>
                 </div>
@@ -455,9 +429,7 @@ export default function Home() {
 
               {/* Workflow Details Container */}
               <div className=" md:p-5 md:pb-[30px] lg:p-[30px] lg:pt-[20px]">
-                <h5 className="mb-[10px] font-semibold md:text-center lg:text-[22px]">
-                  {item.title}
-                </h5>
+                <h5 className="mb-[10px] md:text-center">{item.title}</h5>
                 <p className="text-xs opacity-80 md:text-center lg:text-base">
                   {item.description}
                 </p>
@@ -481,9 +453,9 @@ export default function Home() {
           </div>
 
           <div className="pt-[30px] sm:pt-0">
-            <h5 className="text-[28px] font-semibold capitalize leading-10 lg:text-[38px] lg:leading-[46px] ">
+            <h3 className="capitalize">
               Join our weekly <br /> digest
-            </h5>
+            </h3>
             <p className="pt-[10px] opacity-80 lg:text-[22px] lg:leading-[35px]">
               Get exclusive promotions & updates{" "}
               <br className="hidden lg:block" /> straight to your inbox.

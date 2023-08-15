@@ -1,5 +1,3 @@
-import { FC } from "react";
-import Logo from "./Logo";
 import {
   RxDiscordLogo,
   RxInstagramLogo,
@@ -8,14 +6,9 @@ import {
 } from "react-icons/rx";
 import Link from "next/link";
 
-interface FooterProps {}
+import Logo from "./Logo";
 
-const Footer: FC<FooterProps> = ({}) => {
-  // const formSubmitHandler = (e) => {
-  //   e.preventDefault();
-  //   console.log('Form Submitted...');
-  // };
-
+const Footer = () => {
   return (
     <footer className="bg-secondary">
       <div className="main-container py-10">

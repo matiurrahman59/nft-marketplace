@@ -181,6 +181,178 @@ export function createRandomUser() {
   return creators;
 }
 
+type creatorType = {
+  id: number;
+  creatorName: string;
+  totalSales: number;
+  avatar: string;
+  change: number;
+  nftSold: number;
+};
+
+export const topCreators: creatorType[] = [
+  {
+    id: 1,
+    creatorName: "Ruben Carder",
+    avatar: "/images/top-creators/Creator-1.png",
+    change: 1.41,
+    totalSales: 12.4,
+    nftSold: 602,
+  },
+  {
+    id: 2,
+    creatorName: "Alice Smith",
+    avatar: "/images/top-creators/Creator-2.png",
+    change: -0.32,
+    totalSales: 8.7,
+    nftSold: 420,
+  },
+  {
+    id: 3,
+    creatorName: "John Doe",
+    avatar: "/images/top-creators/Creator-3.png",
+    change: 0.75,
+    totalSales: 9.2,
+    nftSold: 310,
+  },
+  {
+    id: 4,
+    creatorName: "Emma Johnson",
+    avatar: "/images/top-creators/Creator-4.png",
+    change: -0.92,
+    totalSales: 5.6,
+    nftSold: 180,
+  },
+  {
+    id: 5,
+    creatorName: "David Brown",
+    avatar: "/images/top-creators/Creator-5.png",
+    change: 0.21,
+    totalSales: 14.8,
+    nftSold: 720,
+  },
+  {
+    id: 6,
+    creatorName: "Sophia Wilson",
+    avatar: "/images/top-creators/Creator-6.png",
+    change: 1.03,
+    totalSales: 17.2,
+    nftSold: 920,
+  },
+  {
+    id: 7,
+    creatorName: "Michael Garcia",
+    avatar: "/images/top-creators/Creator-7.png",
+    change: -0.15,
+    totalSales: 11.1,
+    nftSold: 540,
+  },
+  {
+    id: 8,
+    creatorName: "Olivia Taylor",
+    avatar: "/images/top-creators/Creator-8.png",
+    change: 0.64,
+    totalSales: 6.9,
+    nftSold: 260,
+  },
+  {
+    id: 9,
+    creatorName: "William Anderson",
+    avatar: "/images/top-creators/Creator-9.png",
+    change: -0.82,
+    totalSales: 3.5,
+    nftSold: 130,
+  },
+  {
+    id: 10,
+    creatorName: "Ava Martinez",
+    avatar: "/images/top-creators/Creator-10.png",
+    change: 0.96,
+    totalSales: 10.5,
+    nftSold: 450,
+  },
+  {
+    id: 11,
+    creatorName: "James Jackson",
+    avatar: "/images/top-creators/Creator-11.png",
+    change: -0.43,
+    totalSales: 7.8,
+    nftSold: 380,
+  },
+  {
+    id: 12,
+    creatorName: "Isabella Brown",
+    avatar: "/images/top-creators/Creator-12.png",
+    change: 0.51,
+    totalSales: 13.7,
+    nftSold: 680,
+  },
+  {
+    id: 13,
+    creatorName: "Logan Thomas",
+    avatar: "/images/top-creators/Creator-1.png",
+    change: 1.12,
+    totalSales: 16.3,
+    nftSold: 780,
+  },
+  {
+    id: 14,
+    creatorName: "Mia White",
+    avatar: "/images/top-creators/Creator-2.png",
+    change: -0.27,
+    totalSales: 8.1,
+    nftSold: 390,
+  },
+  {
+    id: 15,
+    creatorName: "Benjamin Davis",
+    avatar: "/images/top-creators/Creator-3.png",
+    change: 0.37,
+    totalSales: 11.9,
+    nftSold: 570,
+  },
+  {
+    id: 16,
+    creatorName: "Charlotte Rodriguez",
+    avatar: "/images/top-creators/Creator-4.png",
+    change: -0.63,
+    totalSales: 4.4,
+    nftSold: 210,
+  },
+  {
+    id: 17,
+    creatorName: "Daniel Lopez",
+    avatar: "/images/top-creators/Creator-5.png",
+    change: 0.81,
+    totalSales: 9.8,
+    nftSold: 470,
+  },
+  {
+    id: 18,
+    creatorName: "Emily Garcia",
+    avatar: "/images/top-creators/Creator-6.png",
+    change: -0.18,
+    totalSales: 6.2,
+    nftSold: 290,
+  },
+  {
+    id: 19,
+    creatorName: "Ethan Martinez",
+    avatar: "/images/top-creators/Creator-7.png",
+    change: 0.69,
+    totalSales: 7.5,
+    nftSold: 360,
+  },
+  {
+    id: 20,
+    creatorName: "Elena Martinez",
+    avatar: "/images/top-creators/Creator-8.png",
+    change: 0.76,
+    totalSales: 15.9,
+    nftSold: 820,
+  },
+];
+
 export const moreNfts = [
   {
     id: 1,
