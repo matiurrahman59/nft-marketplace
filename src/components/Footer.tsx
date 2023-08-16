@@ -10,7 +10,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary">
+    <footer className="border-t-2 border-dark bg-secondary">
       <div className="main-container py-10">
         <div className="flex flex-col gap-[30px] lg:flex-row lg:justify-between">
           <div>

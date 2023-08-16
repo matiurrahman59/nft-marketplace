@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { topCreators } from "../../../dummy-data";
+import PageHeading from "@/components/PageHeading";
 
 enum Creator {
   TODAY,
@@ -30,10 +31,10 @@ const TopCreator = () => {
   return (
     <section className="section-padding main-container">
       {/* heading text */}
-      <div className="my-[30px] space-y-[10px]">
-        <h2>Top Creators</h2>
-        <p>Check out top ranking NFT artists on the NFT Marketplace.</p>
-      </div>
+      <PageHeading
+        text="Top Creators"
+        subText="Check out top ranking NFT artists on the NFT Marketplace."
+      />
 
       <div className="flexBetween gap-2 text-center font-semibold text-label sm:gap-4 lg:gap-5 lg:text-[22px] lg:leading-[31px]">
         {tabbedButton("1d", "Today", Creator.TODAY)}
@@ -50,7 +51,7 @@ const TopCreator = () => {
             <span className="">Artist</span>
           </div>
           <div className="w-1/5 items-center sm:grid sm:w-[30%] sm:grid-cols-2 sm:gap-10 lg:w-2/4 lg:grid-cols-3">
-            <div className="text-green hidden font-spaceMono text-xs sm:flex">
+            <div className="hidden font-spaceMono text-xs text-green sm:flex">
               Change
             </div>
             <div className="hidden font-spaceMono text-xs lg:flex">
@@ -81,7 +82,7 @@ const TopCreator = () => {
                 </div>
               </div>
               <div className="w-1/5 items-center sm:grid sm:w-[30%] sm:grid-cols-2 sm:gap-10 lg:w-2/4 lg:grid-cols-3">
-                <div className="text-green hidden font-spaceMono text-xs sm:flex">
+                <div className="hidden font-spaceMono text-xs text-green sm:flex">
                   {item.change} %
                 </div>
                 <div className="hidden font-spaceMono text-xs lg:flex">

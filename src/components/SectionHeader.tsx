@@ -15,7 +15,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({
     <div className="flex items-end justify-between">
       {/* Header Title */}
       <div>
-        <h3 className="text-[28px] font-semibold leading-10 lg:text-[38px] lg:leading-[45.6px]">
+        <h3 className="text-[28px] font-semibold capitalize leading-10 lg:text-[38px] lg:leading-[45.6px]">
           {headerTitle}
         </h3>
         <p className="pt-[10px] capitalize lg:text-[22px] lg:leading-[35.2px]">

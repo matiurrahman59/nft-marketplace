@@ -15,6 +15,8 @@ import {
   topCreators,
 } from "../../dummy-data";
 import Button from "@/components/Button";
+import NftCard from "@/components/NftCard";
+import CountDownTimer from "@/components/CountDownTimer";
 
 export default function Home() {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -172,7 +174,7 @@ export default function Home() {
         >
           <Button
             label="View Rankings"
-            href="#"
+            href="/top-creator"
             style="ring-2 px-5 lg:px-[50px] ring-primary hidden sm:flex"
           >
             <PiRocketLaunchDuotone size={20} className="text-primary" />
@@ -274,43 +276,10 @@ export default function Home() {
           </Button>
         </SectionHeader>
 
-        <div className=" space-y-5 pt-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 lg:grid-cols-3">
-          {moreNfts.map((item) => (
-            <div
-              key={item.id}
-              className="overflow-hidden rounded-5 bg-secondary"
-            >
-              <div className="relative h-[238px] w-full sm:h-[295px]">
-                <Image src={item.image} alt="nft images" fill />
-              </div>
-
-              <div className="p-5 pb-6">
-                <div className="text-[22px] font-semibold leading-[30px]">
-                  {item.title}
-                </div>
-
-                <div className="flex items-center gap-2 pt-1">
-                  <Image
-                    src={item.avatar}
-                    alt="avatar"
-                    width={24}
-                    height={24}
-                    className="rounded-full"
-                  />
-                  <span className="font-spaceMono">{item.name}</span>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 font-spaceMono">
-                  <div>
-                    <span className="text-xs text-label">Price</span>
-                    <p className="mt-2 text-white">{item.price} ETH</p>
-                  </div>
-                  <div className="flex flex-col items-end justify-end">
-                    <span className="text-xs text-label">Highest Bid</span>
-                    <p className="mt-2 text-white">{item.bid} ETH</p>
-                  </div>
-                </div>
-              </div>
+        <div className="space-y-5 pt-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 lg:grid-cols-3">
+          {moreNfts.slice(0, 3).map((item) => (
+            <div key={item.id}>
+              <NftCard item={item} />
             </div>
           ))}
         </div>
@@ -359,37 +328,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="rounded-5 bg-blur-1/50 p-[30px] backdrop-blur-sm">
-                  <span className="font-spaceMono text-xs">
-                    Auction ends in:
-                  </span>
-                  <div className="mt-[10px] flex justify-between gap-4">
-                    <div>
-                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
-                        59
-                      </div>
-                      <div className="font-spaceMono text-xs">Hours</div>
-                    </div>
-                    <div className="text-[28px] font-semibold leading-10">
-                      :
-                    </div>
-                    <div>
-                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
-                        59
-                      </div>
-                      <div className="font-spaceMono text-xs">Minutes</div>
-                    </div>
-                    <div className="text-[28px] font-semibold leading-10">
-                      :
-                    </div>
-                    <div>
-                      <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
-                        59
-                      </div>
-                      <div className="font-spaceMono text-xs">Seconds</div>
-                    </div>
-                  </div>
-                </div>
+                <CountDownTimer />
               </div>
 
               <Button
