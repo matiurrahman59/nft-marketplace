@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 
 interface CountDownTimer {
-  style?: string;
   children?: React.ReactNode;
 }
 
-const CountDownTimer: FC<CountDownTimer> = ({ style, children }) => {
+const CountDownTimer: FC<CountDownTimer> = ({ children }) => {
   return (
     <div className="rounded-5 bg-blur-1/50 p-[30px] backdrop-blur-sm">
       <span className="font-spaceMono text-xs">Auction ends in:</span>

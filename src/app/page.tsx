@@ -5,8 +5,12 @@ import Link from "next/link";
 import { PiRocketLaunchDuotone, PiRocketLaunchThin } from "react-icons/pi";
 import { FiMail, FiEye } from "react-icons/fi";
 
-// internal imports
 import SectionHeader from "@/components/SectionHeader";
+import CountDownTimer from "@/components/CountDownTimer";
+import { NAV_Links } from "@/utils/constants";
+import NftCard from "@/components/NftCard";
+import NftData from "@/components/NftData";
+import Button from "@/components/Button";
 import {
   Categories,
   moreNfts,
@@ -14,30 +18,15 @@ import {
   workFlow,
   topCreators,
 } from "../../dummy-data";
-import Button from "@/components/Button";
-import NftCard from "@/components/NftCard";
-import CountDownTimer from "@/components/CountDownTimer";
 
 export default function Home() {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("hello there");
-  };
-
-  const bannerItem = (title: string, quantity: string | number) => {
-    return (
-      <div className="flex flex-col">
-        <span className="font-spaceMono text-[22px] font-bold leading-[35px] lg:text-[28px] lg:leading-[40px]">
-          {quantity}k+
-        </span>
-        <span className="lg:text-2xl lg:leading-[38px]">{title}</span>
-      </div>
-    );
   };
 
   return (
     <main>
-      {/* banner section */}
+      {/* BANNER SECTION */}
       <section className="main-container grid-cols-2 items-start gap-[30px] py-10 sm:grid sm:py-20 lg:gap-16 ">
         <div>
           <h1 className="text-[28px] font-semibold capitalize leading-10 sm:text-[38px] lg:text-[67px] lg:leading-[73px]">
@@ -53,7 +42,7 @@ export default function Home() {
             <div className="inline-block">
               <Button
                 label="Get Started"
-                href="3"
+                href={NAV_Links.signUp}
                 style="mt-5 lg:mt-[30px] bg-primary px-[50px]"
               >
                 <PiRocketLaunchThin
@@ -64,10 +53,10 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="mt-5 flex items-center justify-between sm:w-[90%] lg:mt-[30px]">
-              {bannerItem("Total Sale", 140)}
-              {bannerItem("Auctions", 240)}
-              {bannerItem("Artists", 340)}
+            <div className="flexBetween mt-5 sm:w-[90%] lg:mt-[30px]">
+              <NftData title="Total Sale" quanTity={140} />
+              <NftData title="Auctions" quanTity={240} />
+              <NftData title="Artists" quanTity={340} />
             </div>
           </div>
         </div>
@@ -101,47 +90,56 @@ export default function Home() {
 
         {/* hidden in tab or large screen */}
         <div className="sm:hidden">
-          <Button label="Get Started" href="#" style="mt-10 bg-primary">
+          <Button
+            label="Get Started"
+            href={NAV_Links.signUp}
+            style="mt-10 bg-primary"
+          >
             <PiRocketLaunchThin size={20} className=" text-white" />
           </Button>
 
-          <div className="mt-10 flex items-center justify-between">
-            {bannerItem("Total Sale", 140)}
-            {bannerItem("Auctions", 240)}
-            {bannerItem("Artists", 340)}
+          <div className="flexBetween mt-10">
+            <NftData title="Total Sale" quanTity={140} />
+            <NftData title="Auctions" quanTity={240} />
+            <NftData title="Artists" quanTity={340} />
           </div>
         </div>
       </section>
 
-      {/* trending section */}
+      {/* TRENDING SECTION */}
       <section className="section-padding main-container">
         <SectionHeader
           headerTitle="Trending collection"
           text="Checkout our weekly updated trending collection."
         />
-        {/* Image Container */}
         <div className="grid gap-10 pt-10 md:grid-cols-2 md:gap-[30px] lg:grid-cols-3 lg:pt-[60px]">
           {trendingCollection.map((item) => (
             <div key={item.id}>
-              <Image
-                src={item.images[0]}
-                priority
-                className="scale-animation h-[315px] w-full rounded-2xl object-cover md:h-[330px]"
-                alt={`trending collection image ${item.id}`}
-              />
+              <div className="scale-animation relative h-[315px] md:h-[330px] ">
+                <Image
+                  src={item.images[0]}
+                  fill
+                  className="rounded-2xl object-cover"
+                  alt={`trending collection image ${item.id}`}
+                />
+              </div>
               <div className="my-[15px] grid grid-cols-3 gap-[15px]">
-                <Image
-                  src={item.images[1]}
-                  priority
-                  alt={`trending collection image ${item.id}`}
-                  className="scale-animation h-[95px] w-[95px] rounded-2xl object-cover md:h-[100px]"
-                />
-                <Image
-                  src={item.images[2]}
-                  priority
-                  alt={`trending collection image ${item.id}`}
-                  className="scale-animation h-[95px] w-[95px] rounded-2xl object-cover md:h-[100px]"
-                />
+                <div className="scale-animation relative h-[95px] w-[95px] md:h-[100px]">
+                  <Image
+                    src={item.images[1]}
+                    fill
+                    alt={`trending collection image ${item.id}`}
+                    className=" rounded-2xl object-cover "
+                  />
+                </div>
+                <div className="scale-animation relative h-[95px] w-[95px] md:h-[100px]">
+                  <Image
+                    src={item.images[2]}
+                    fill
+                    alt={`trending collection image ${item.id}`}
+                    className=" rounded-2xl object-cover "
+                  />
+                </div>
                 <div className="scale-animation grid cursor-pointer place-content-center rounded-2xl bg-primary font-spaceMono font-bold sm:text-[22px]">
                   <span>1025+</span>
                 </div>
@@ -152,12 +150,14 @@ export default function Home() {
                   {item.title}
                 </span>
                 <div className="mt-[10px] flex gap-3">
-                  <Image
-                    src={item.avatar}
-                    className="h-6 w-6 object-cover"
-                    alt="user image"
-                  />
-
+                  <div className="relative h-6 w-6">
+                    <Image
+                      src={item.avatar}
+                      fill
+                      className=" object-cover"
+                      alt="user image"
+                    />
+                  </div>
                   <span>{item.userName}</span>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* top creators */}
+      {/* TOP CREATOR SECTION */}
       <section className="section-padding main-container">
         <SectionHeader
           headerTitle="Top Creators"
@@ -183,7 +183,8 @@ export default function Home() {
 
         <div className="space-y-5 pt-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 lg:grid-cols-3">
           {topCreators?.slice(0, 12).map((user) => (
-            <div
+            <Link
+              href={NAV_Links.artist}
               key={user.id}
               className="scale-animation flex cursor-pointer items-center gap-5 rounded-5 bg-secondary p-5 lg:flex-col lg:justify-center"
             >
@@ -210,46 +211,46 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <Button
           label="View Rankings"
-          href="#"
+          href={NAV_Links.topCreator}
           style="ring-2 ring-primary sm:hidden mt-10"
         >
           <PiRocketLaunchDuotone size={20} className="text-primary" />
         </Button>
       </section>
 
-      {/* Category section */}
+      {/* CATEGORY SECTION */}
       <section className="section-padding main-container">
         <SectionHeader headerTitle="Browse Categories" />
         <div className="grid grid-cols-2 gap-5 pt-10 md:grid-cols-4 md:gap-[30px] lg:pt-12">
           {Categories.map((item) => (
             <Link
-              href="/about"
+              href={NAV_Links.marketPlace}
               key={item.id}
               className="group cursor-pointer transition-all"
             >
               <div className="overflow-hidden rounded-5 bg-secondary">
                 <div className="relative">
-                  <div className="overflow-hidden">
+                  <div className="relative grid h-[142px] place-content-center overflow-hidden lg:h-[240px]">
                     <Image
                       src={item.bgImageUrl}
                       alt={`nft ${item.title} background image`}
                       priority
-                      className="h-[142px] w-full object-cover transition duration-300 group-hover:blur-md  md:w-full lg:h-[240px]"
+                      fill
+                      className="object-cover transition duration-300 group-hover:blur-md "
                     />
-                  </div>
-                  <div className="absolute inset-0 hidden place-content-center transition duration-300 group-hover:grid">
-                    <Image
-                      src={item.iconImageUrl}
-                      alt={`nft ${item.title} category icon image`}
-                      width={80}
-                      height={80}
-                      className="lg:h-[100px] lg:w-[100px]"
-                    />
+
+                    <div className="relative hidden h-20 w-20 group-hover:block ">
+                      <Image
+                        src={item.iconImageUrl}
+                        alt={`nft ${item.title} category icon image`}
+                        fill
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="pb-[25px] pl-[30px] pt-5">
@@ -261,7 +262,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* more nfts */}
+      {/* MORE NFT SECTION */}
       <section className="section-padding main-container">
         <SectionHeader
           headerTitle="Discover More NFTS"
@@ -269,7 +270,7 @@ export default function Home() {
         >
           <Button
             label="See All"
-            href="#"
+            href={NAV_Links.marketPlace}
             style="ring-2 px-5 lg:px-[50px] ring-primary hidden sm:flex"
           >
             <FiEye size={20} className="text-primary" />
@@ -286,20 +287,19 @@ export default function Home() {
 
         <Button
           label="See All"
-          href="#"
+          href={NAV_Links.marketPlace}
           style="ring-2 ring-primary sm:hidden mt-10"
         >
           <FiEye size={20} className="text-primary" />
         </Button>
       </section>
 
-      {/* highlight mashrooms section */}
+      {/* HIGHLIGHT NFT SECTION */}
       <section>
         <div className="relative h-[593px] w-full bg-[url('/images/mashroom-sm.png')]  bg-cover sm:h-[630px] sm:bg-[url('/images/mashroom-lg.png')]">
           <div className="absolute inset-0 bg-gradient-to-b from-[#a259ff00] to-primary" />
 
           <div className="sm:main-container absolute inset-0 z-10">
-            {/* sm:pt-[360px] */}
             <div className="px-7 pb-10 pt-[120px] sm:pt-[360px]">
               <div className="flex flex-col gap-[30px] sm:flex-row sm:items-end sm:justify-between sm:gap-0">
                 <div className="space-y-[30px]">
@@ -320,7 +320,7 @@ export default function Home() {
                   <div className="hidden sm:inline-block">
                     <Button
                       label="See NFT"
-                      href="#"
+                      href={NAV_Links.nftDetails}
                       style="bg-white text-secondary px-[50px]"
                     >
                       <FiEye size={20} className="text-primary" />
@@ -333,7 +333,7 @@ export default function Home() {
 
               <Button
                 label="See NFT"
-                href="#"
+                href={NAV_Links.nftDetails}
                 style="bg-white text-secondary sm:hidden mt-[30px]"
               >
                 <FiEye size={20} className="text-primary" />
@@ -343,30 +343,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* work flow section */}
+      {/* WORKFLOW SECTION */}
       <section className="section-padding main-container">
-        {/* Heading text */}
         <SectionHeader
           headerTitle="How it works"
           text="Find out how to get started"
         />
 
-        {/* WorkFlow */}
         <div className="grid gap-5 pt-10 md:grid-cols-3 md:gap-[30px] lg:pt-12 ">
           {workFlow.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-center gap-5 rounded-5 bg-secondary  p-5 md:flex-col md:p-0 "
+              className="flexCenter gap-5 rounded-5 bg-secondary  p-5 md:flex-col md:p-0 "
             >
-              {/* Image Container */}
-              <Image
-                src={item.imgUrl}
-                priority
-                className="h-[100px] w-[100px] object-fill md:h-[160px] md:w-[160px] lg:h-[250px] lg:w-[250px]"
-                alt="workflow image "
-              />
+              <div className="relative h-[100px] w-[100px]  md:h-[160px] md:w-[160px] lg:h-[250px] lg:w-[250px]">
+                <Image
+                  src={item.imgUrl}
+                  fill
+                  className=" object-fill"
+                  alt="workflow image "
+                />
+              </div>
 
-              {/* Workflow Details Container */}
               <div className=" md:p-5 md:pb-[30px] lg:p-[30px] lg:pt-[20px]">
                 <h5 className="mb-[10px] md:text-center">{item.title}</h5>
                 <p className="text-xs opacity-80 md:text-center lg:text-base">
@@ -378,7 +376,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* newsLetter section */}
+      {/* NEWSLETTER SECTION */}
       <section className="section-padding main-container">
         <div className="items-center rounded-5 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:bg-secondary sm:px-[30px] sm:py-10 lg:gap-20 lg:p-[60px]">
           <div className="relative h-[255px] md:h-[280px] lg:h-[310px]">

@@ -122,7 +122,7 @@ const NftDetails = () => {
           <SectionHeader headerTitle="More from this artist">
             <Button
               label="Go To Artist Page"
-              href="/top-creator"
+              href="/artist"
               style="ring-2 px-5 lg:px-[50px] ring-primary hidden sm:flex"
             >
               <ArrowRightIcon className="h-5 w-5 text-primary" />

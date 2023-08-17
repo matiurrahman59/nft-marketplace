@@ -1,18 +1,17 @@
 "use client";
-import PageHeading from "@/components/PageHeading";
-import { FC, useState } from "react";
-import { moreNfts, trendingCollection } from "../../../dummy-data";
-import Image from "next/image";
-import NftCard from "@/components/NftCard";
 
-interface MarketPlaceProps {}
+import { useState } from "react";
+
+import PageHeading from "@/components/PageHeading";
+import NftCard from "@/components/NftCard";
+import { moreNfts } from "../../../dummy-data";
 
 enum tab {
   NFTS,
   COLLECTIONS,
 }
 
-const MarketPlace: FC<MarketPlaceProps> = ({}) => {
+const MarketPlace = () => {
   const [selectedTab, setSelectedTab] = useState<tab>(tab.NFTS);
 
   return (

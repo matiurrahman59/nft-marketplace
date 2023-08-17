@@ -1,74 +1,39 @@
-import { faker } from "@faker-js/faker";
-
-// user images
-import userOne from "../public/images/top-creators/Creator-6.png";
-import userTwo from "../public/images/top-creators/Creator-7.png";
-
-// Trending collection
-import bear from "../public/images/all-nft-collection/Bear.png";
-import cat from "../public/images/all-nft-collection/Cat.png";
-import dog from "../public/images/all-nft-collection/Dog-1.png";
-
-// magic mushrooms
-import magicMushroom from "../public/images/nft-highlight.png";
-
-// disco machines
-import dancingRobotOne from "../public/images/all-nft-collection/Dancing-robot-1.png";
-import dancingRobotTwo from "../public/images/all-nft-collection/Dancing-robot-2.png";
-import dancingRobotThree from "../public/images/all-nft-collection/Dancing-robot-5.png";
-
-import mushroom from "../public/images/all-nft-collection/MagicMushroom.png";
-
-// workflow images
-import workFlowOne from "../public/images/work-timeline/Timeline-Image-1.png";
-import workFlowTwo from "../public/images/work-timeline/Timeline-Image-2.png";
-import workFlowThree from "../public/images/work-timeline/Timeline-Image-3.png";
-
-// category images
-import categoryBG1 from "../public/images/categories/Art.png";
-import categoryBG2 from "../public/images/categories/Collectibles.png";
-import categoryBG3 from "../public/images/categories/Music.png";
-import categoryBG4 from "../public/images/categories/Photography.png";
-import categoryBG7 from "../public/images/categories/Sport.png";
-import categoryBG6 from "../public/images/categories/Utility.png";
-import categoryBG5 from "../public/images/categories/Video.png";
-import categoryBG8 from "../public/images/categories/VirtualWorlds.png";
-
-// category icons
-import categoryIcon7 from "../public/images/category-icons/Basketball.png";
-import categoryIcon4 from "../public/images/category-icons/Camera.png";
-import categoryIcon6 from "../public/images/category-icons/MagicWand.png";
-import categoryIcon3 from "../public/images/category-icons/MusicNotes.png";
-import categoryIcon1 from "../public/images/category-icons/PaintBrush.png";
-import categoryIcon8 from "../public/images/category-icons/Planet.png";
-import categoryIcon2 from "../public/images/category-icons/Swatches.png";
-import categoryIcon5 from "../public/images/category-icons/VideoCamera.png";
-import { Url } from "url";
-
 export const trendingCollection = [
   {
     id: 1,
     title: "DEGN Animals",
-    images: [dog, cat, bear],
+    images: [
+      "/images/trending/1.png",
+      "/images/trending/2.png",
+      "/images/trending/3.png",
+    ],
     totalItem: 1025,
     userName: "MRFox",
-    avatar: userOne,
+    avatar: "/images/top-creators/6.png",
   },
   {
     id: 2,
     title: "Magic Mushrooms",
-    images: [mushroom, mushroom, mushroom],
+    images: [
+      "/images/trending/4.png",
+      "/images/trending/4.png",
+      "/images/trending/4.png",
+    ],
     totalItem: 725,
     userName: "Shroomie",
-    avatar: userTwo,
+    avatar: "/images/top-creators/7.png",
   },
   {
     id: 3,
     title: "Disco Machines",
-    images: [dancingRobotOne, dancingRobotTwo, dancingRobotThree],
+    images: [
+      "/images/trending/5.png",
+      "/images/trending/6.png",
+      "/images/trending/7.png",
+    ],
     totalItem: 1300,
     userName: "BeKind2Robots",
-    avatar: userOne,
+    avatar: "/images/top-creators/4.png",
   },
 ];
 
@@ -96,21 +61,21 @@ export const workFlow = [
     title: "Setup Your wallet",
     description:
       "Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in the top right corner.",
-    imgUrl: workFlowOne,
+    imgUrl: "/images/workflow/1.png",
   },
   {
     id: 2,
     title: "Create Collection",
     description:
       "Upload your work and setup your collection. Add a description, social links and floor price.",
-    imgUrl: workFlowTwo,
+    imgUrl: "/images/workflow/2.png",
   },
   {
     id: 3,
     title: "Start Earning",
     description:
       "Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.",
-    imgUrl: workFlowThree,
+    imgUrl: "/images/workflow/3.png",
   },
 ];
 
@@ -118,83 +83,58 @@ export const Categories = [
   {
     id: 1,
     title: "Art",
-    bgImageUrl: categoryBG1,
-    iconImageUrl: categoryIcon1,
+    bgImageUrl: "/images/categories/1.png",
+    iconImageUrl: "/images/categoryIcons/1.png",
   },
   {
     id: 2,
     title: "Collectibles",
-    bgImageUrl: categoryBG2,
-    iconImageUrl: categoryIcon2,
+    bgImageUrl: "/images/categories/2.png",
+    iconImageUrl: "/images/categoryIcons/2.png",
   },
   {
     id: 3,
     title: "Music",
-    bgImageUrl: categoryBG3,
-    iconImageUrl: categoryIcon3,
+    bgImageUrl: "/images/categories/3.png",
+    iconImageUrl: "/images/categoryIcons/3.png",
   },
   {
     id: 4,
     title: "Photography",
-    bgImageUrl: categoryBG4,
-    iconImageUrl: categoryIcon4,
+    bgImageUrl: "/images/categories/4.png",
+    iconImageUrl: "/images/categoryIcons/4.png",
   },
   {
     id: 5,
     title: "Video",
-    bgImageUrl: categoryBG5,
-    iconImageUrl: categoryIcon5,
+    bgImageUrl: "/images/categories/5.png",
+    iconImageUrl: "/images/categoryIcons/5.png",
   },
   {
     id: 6,
     title: "Utility",
-    bgImageUrl: categoryBG6,
-    iconImageUrl: categoryIcon6,
+    bgImageUrl: "/images/categories/6.png",
+    iconImageUrl: "/images/categoryIcons/6.png",
   },
   {
     id: 7,
     title: "Sport",
-    bgImageUrl: categoryBG7,
-    iconImageUrl: categoryIcon7,
+    bgImageUrl: "/images/categories/7.png",
+    iconImageUrl: "/images/categoryIcons/7.png",
   },
   {
     id: 8,
     title: "Virtual Worlds",
-    bgImageUrl: categoryBG8,
-    iconImageUrl: categoryIcon8,
+    bgImageUrl: "/images/categories/8.png",
+    iconImageUrl: "/images/categoryIcons/8.png",
   },
 ];
 
-export function createRandomUser() {
-  const creators = [];
-  for (let i = 1; i <= 20; i++) {
-    creators.push({
-      id: i,
-      creatorName: faker.internet.userName(),
-      totalSales: faker.number.int({
-        min: 10,
-        max: 50,
-      }),
-      avatar: faker.image.avatar(),
-    });
-  }
-  return creators;
-}
-
-type creatorType = {
-  id: number;
-  creatorName: string;
-  totalSales: number;
-  avatar: string;
-  change: number;
-  nftSold: number;
-};
-
-export const topCreators: creatorType[] = [
+export const topCreators = [
   {
     id: 1,
     creatorName: "Ruben Carder",
-    avatar: "/images/top-creators/Creator-1.png",
+    avatar: "/images/top-creators/1.png",
     change: 1.41,
     totalSales: 12.4,
     nftSold: 602,
@@ -202,7 +142,7 @@ export const topCreators: creatorType[] = [
   {
     id: 2,
     creatorName: "Alice Smith",
-    avatar: "/images/top-creators/Creator-2.png",
+    avatar: "/images/top-creators/2.png",
     change: -0.32,
     totalSales: 8.7,
     nftSold: 420,
@@ -210,7 +150,7 @@ export const topCreators: creatorType[] = [
   {
     id: 3,
     creatorName: "John Doe",
-    avatar: "/images/top-creators/Creator-3.png",
+    avatar: "/images/top-creators/3.png",
     change: 0.75,
     totalSales: 9.2,
     nftSold: 310,
@@ -218,7 +158,7 @@ export const topCreators: creatorType[] = [
   {
     id: 4,
     creatorName: "Emma Johnson",
-    avatar: "/images/top-creators/Creator-4.png",
+    avatar: "/images/top-creators/4.png",
     change: -0.92,
     totalSales: 5.6,
     nftSold: 180,
@@ -226,7 +166,7 @@ export const topCreators: creatorType[] = [
   {
     id: 5,
     creatorName: "David Brown",
-    avatar: "/images/top-creators/Creator-5.png",
+    avatar: "/images/top-creators/5.png",
     change: 0.21,
     totalSales: 14.8,
     nftSold: 720,
@@ -234,7 +174,7 @@ export const topCreators: creatorType[] = [
   {
     id: 6,
     creatorName: "Sophia Wilson",
-    avatar: "/images/top-creators/Creator-6.png",
+    avatar: "/images/top-creators/6.png",
     change: 1.03,
     totalSales: 17.2,
     nftSold: 920,
@@ -242,7 +182,7 @@ export const topCreators: creatorType[] = [
   {
     id: 7,
     creatorName: "Michael Garcia",
-    avatar: "/images/top-creators/Creator-7.png",
+    avatar: "/images/top-creators/7.png",
     change: -0.15,
     totalSales: 11.1,
     nftSold: 540,
@@ -250,7 +190,7 @@ export const topCreators: creatorType[] = [
   {
     id: 8,
     creatorName: "Olivia Taylor",
-    avatar: "/images/top-creators/Creator-8.png",
+    avatar: "/images/top-creators/8.png",
     change: 0.64,
     totalSales: 6.9,
     nftSold: 260,
@@ -258,7 +198,7 @@ export const topCreators: creatorType[] = [
   {
     id: 9,
     creatorName: "William Anderson",
-    avatar: "/images/top-creators/Creator-9.png",
+    avatar: "/images/top-creators/9.png",
     change: -0.82,
     totalSales: 3.5,
     nftSold: 130,
@@ -266,7 +206,7 @@ export const topCreators: creatorType[] = [
   {
     id: 10,
     creatorName: "Ava Martinez",
-    avatar: "/images/top-creators/Creator-10.png",
+    avatar: "/images/top-creators/10.png",
     change: 0.96,
     totalSales: 10.5,
     nftSold: 450,
@@ -274,7 +214,7 @@ export const topCreators: creatorType[] = [
   {
     id: 11,
     creatorName: "James Jackson",
-    avatar: "/images/top-creators/Creator-11.png",
+    avatar: "/images/top-creators/11.png",
     change: -0.43,
     totalSales: 7.8,
     nftSold: 380,
@@ -282,7 +222,7 @@ export const topCreators: creatorType[] = [
   {
     id: 12,
     creatorName: "Isabella Brown",
-    avatar: "/images/top-creators/Creator-12.png",
+    avatar: "/images/top-creators/12.png",
     change: 0.51,
     totalSales: 13.7,
     nftSold: 680,
@@ -290,7 +230,7 @@ export const topCreators: creatorType[] = [
   {
     id: 13,
     creatorName: "Logan Thomas",
-    avatar: "/images/top-creators/Creator-1.png",
+    avatar: "/images/top-creators/1.png",
     change: 1.12,
     totalSales: 16.3,
     nftSold: 780,
@@ -298,7 +238,7 @@ export const topCreators: creatorType[] = [
   {
     id: 14,
     creatorName: "Mia White",
-    avatar: "/images/top-creators/Creator-2.png",
+    avatar: "/images/top-creators/2.png",
     change: -0.27,
     totalSales: 8.1,
     nftSold: 390,
@@ -306,7 +246,7 @@ export const topCreators: creatorType[] = [
   {
     id: 15,
     creatorName: "Benjamin Davis",
-    avatar: "/images/top-creators/Creator-3.png",
+    avatar: "/images/top-creators/3.png",
     change: 0.37,
     totalSales: 11.9,
     nftSold: 570,
@@ -314,7 +254,7 @@ export const topCreators: creatorType[] = [
   {
     id: 16,
     creatorName: "Charlotte Rodriguez",
-    avatar: "/images/top-creators/Creator-4.png",
+    avatar: "/images/top-creators/4.png",
     change: -0.63,
     totalSales: 4.4,
     nftSold: 210,
@@ -322,7 +262,7 @@ export const topCreators: creatorType[] = [
   {
     id: 17,
     creatorName: "Daniel Lopez",
-    avatar: "/images/top-creators/Creator-5.png",
+    avatar: "/images/top-creators/5.png",
     change: 0.81,
     totalSales: 9.8,
     nftSold: 470,
@@ -330,7 +270,7 @@ export const topCreators: creatorType[] = [
   {
     id: 18,
     creatorName: "Emily Garcia",
-    avatar: "/images/top-creators/Creator-6.png",
+    avatar: "/images/top-creators/6.png",
     change: -0.18,
     totalSales: 6.2,
     nftSold: 290,
@@ -338,7 +278,7 @@ export const topCreators: creatorType[] = [
   {
     id: 19,
     creatorName: "Ethan Martinez",
-    avatar: "/images/top-creators/Creator-7.png",
+    avatar: "/images/top-creators/7.png",
     change: 0.69,
     totalSales: 7.5,
     nftSold: 360,
@@ -346,7 +286,7 @@ export const topCreators: creatorType[] = [
   {
     id: 20,
     creatorName: "Elena Martinez",
-    avatar: "/images/top-creators/Creator-8.png",
+    avatar: "/images/top-creators/8.png",
     change: 0.76,
     totalSales: 15.9,
     nftSold: 820,
@@ -361,7 +301,7 @@ export const moreNfts = [
     price: 1.63,
     bid: 0.33,
     image: "/images/more-nft/1.png",
-    avatar: "/images/top-creators/Creator-1.png",
+    avatar: "/images/top-creators/1.png",
   },
   {
     id: 2,
@@ -370,7 +310,7 @@ export const moreNfts = [
     price: 1.63,
     bid: 0.33,
     image: "/images/more-nft/2.png",
-    avatar: "/images/top-creators/Creator-2.png",
+    avatar: "/images/top-creators/2.png",
   },
   {
     id: 3,
@@ -379,7 +319,7 @@ export const moreNfts = [
     price: 1.63,
     bid: 0.33,
     image: "/images/more-nft/3.png",
-    avatar: "/images/top-creators/Creator-3.png",
+    avatar: "/images/top-creators/3.png",
   },
   {
     id: 4,
@@ -388,7 +328,7 @@ export const moreNfts = [
     price: 2.1,
     bid: 0.45,
     image: "/images/more-nft/4.png",
-    avatar: "/images/top-creators/Creator-4.png",
+    avatar: "/images/top-creators/4.png",
   },
   {
     id: 5,
@@ -397,7 +337,7 @@ export const moreNfts = [
     price: 2.25,
     bid: 0.5,
     image: "/images/more-nft/5.png",
-    avatar: "/images/top-creators/Creator-5.png",
+    avatar: "/images/top-creators/5.png",
   },
   {
     id: 6,
@@ -406,7 +346,7 @@ export const moreNfts = [
     price: 1.8,
     bid: 0.4,
     image: "/images/more-nft/6.png",
-    avatar: "/images/top-creators/Creator-6.png",
+    avatar: "/images/top-creators/6.png",
   },
   {
     id: 7,
@@ -415,7 +355,7 @@ export const moreNfts = [
     price: 2.0,
     bid: 0.35,
     image: "/images/more-nft/7.png",
-    avatar: "/images/top-creators/Creator-7.png",
+    avatar: "/images/top-creators/7.png",
   },
   {
     id: 8,
@@ -424,7 +364,7 @@ export const moreNfts = [
     price: 1.95,
     bid: 0.38,
     image: "/images/more-nft/8.png",
-    avatar: "/images/top-creators/Creator-8.png",
+    avatar: "/images/top-creators/8.png",
   },
   {
     id: 9,
@@ -433,7 +373,7 @@ export const moreNfts = [
     price: 2.2,
     bid: 0.48,
     image: "/images/more-nft/9.png",
-    avatar: "/images/top-creators/Creator-9.png",
+    avatar: "/images/top-creators/9.png",
   },
   {
     id: 10,
@@ -442,7 +382,7 @@ export const moreNfts = [
     price: 1.75,
     bid: 0.3,
     image: "/images/more-nft/10.png",
-    avatar: "/images/top-creators/Creator-10.png",
+    avatar: "/images/top-creators/10.png",
   },
   {
     id: 11,
@@ -451,7 +391,7 @@ export const moreNfts = [
     price: 2.05,
     bid: 0.42,
     image: "/images/more-nft/11.png",
-    avatar: "/images/top-creators/Creator-11.png",
+    avatar: "/images/top-creators/11.png",
   },
   {
     id: 12,
@@ -460,6 +400,6 @@ export const moreNfts = [
     price: 2.15,
     bid: 0.47,
     image: "/images/more-nft/12.png",
-    avatar: "/images/top-creators/Creator-12.png",
+    avatar: "/images/top-creators/12.png",
   },
 ];

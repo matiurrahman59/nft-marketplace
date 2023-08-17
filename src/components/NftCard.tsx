@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
+import { NAV_Links } from "@/utils/constants";
+
 interface itemProperty {
   title: string;
   image: string;
@@ -23,7 +25,7 @@ const NftCard: FC<NftCardProps> = ({ item, style }) => {
         style ? style : "bg-secondary"
       }`}
     >
-      <Link href="/nft-details">
+      <Link href={NAV_Links.nftDetails}>
         <div className="relative h-56 w-full sm:h-64 lg:h-72">
           <Image
             src={item.image}

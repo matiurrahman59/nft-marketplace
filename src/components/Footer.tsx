@@ -1,12 +1,8 @@
-import {
-  RxDiscordLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxVideo,
-} from "react-icons/rx";
 import Link from "next/link";
 
 import Logo from "./Logo";
+import SocialMediaLogo from "./SocialMediaLogo";
+import { NAV_Links } from "@/utils/constants";
 
 const Footer = () => {
   return (
@@ -20,12 +16,7 @@ const Footer = () => {
               <p>NFT marketplace UI created with Anima for Figma.</p>
               <div className="pt-5">
                 <p>Join our community</p>
-                <div className="flex items-center gap-[10px] pt-[15px] text-[#858584]">
-                  <RxDiscordLogo className="h-8 w-8 cursor-pointer" />
-                  <RxVideo className="h-8 w-8 cursor-pointer" />
-                  <RxTwitterLogo className="h-8 w-8 cursor-pointer" />
-                  <RxInstagramLogo className="h-8 w-8 cursor-pointer" />
-                </div>
+                <SocialMediaLogo />
               </div>
             </div>
           </div>
@@ -34,9 +25,9 @@ const Footer = () => {
           <div>
             <h5 className="font-spaceMono font-bold leading-[35px]">Explore</h5>
             <div className="flex flex-col gap-5 pt-5 opacity-80 lg:pt-[25px]">
-              <Link href="#">Marketplace</Link>
-              <Link href="#">Rankings</Link>
-              <Link href="#">Connect a wallet</Link>
+              <Link href={NAV_Links.marketPlace}>Marketplace</Link>
+              <Link href={NAV_Links.topCreator}>Rankings</Link>
+              <Link href={NAV_Links.signUp}>Connect a wallet</Link>
             </div>
           </div>
         </div>
