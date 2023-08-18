@@ -37,7 +37,7 @@ const Navbar = () => {
           menuOpen ? "flex" : "hidden"
         }`}
       >
-        <div className="w-1/2 bg-dark pl-3 pt-5">
+        <div className="w-1/2 bg-dark pl-3 pt-5 sm:w-1/3">
           {/* menu close button */}
           <button onClick={() => setMenuOpen(false)} className="px-2 py-2">
             <XMarkIcon className="h-6 w-6" />

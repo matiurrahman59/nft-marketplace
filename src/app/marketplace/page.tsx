@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useDebounce } from "use-debounce";
 
 import PageHeading from "@/components/PageHeading";
 import NftCard from "@/components/NftCard";
@@ -13,6 +14,17 @@ enum tab {
 
 const MarketPlace = () => {
   const [selectedTab, setSelectedTab] = useState<tab>(tab.NFTS);
+  const [query, setQuery] = useState(moreNfts);
+  const [nfts] = useDebounce(query, 300);
+
+  console.log(nfts);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = moreNfts.filter((item) =>
+      item.title.toLowerCase().includes(e.target.value),
+    );
+    setQuery(newQuery);
+  };
 
   return (
     <section>
@@ -25,6 +37,7 @@ const MarketPlace = () => {
         <div className="relative">
           <input
             type="text"
+            onChange={onChange}
             placeholder="Search your favourite NFTs"
             className="w-full rounded-5 border-0 bg-dark px-5 py-3 ring-2 ring-secondary placeholder:text-label focus:outline-none"
           />
@@ -70,17 +83,23 @@ const MarketPlace = () => {
         </div>
       </div>
 
-      <div className="bg-secondary">
-        <div className="main-container ">
-          <div className="space-y-5 py-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 sm:pb-20 sm:pt-14 lg:grid-cols-3">
-            {moreNfts.map((item) => (
-              <div key={item.id}>
-                <NftCard item={item} style="bg-dark" />
-              </div>
-            ))}
+      {nfts.length ? (
+        <div className="bg-secondary">
+          <div className="main-container ">
+            <div className="space-y-5 py-10 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:space-y-0 sm:pb-20 sm:pt-14 lg:grid-cols-3">
+              {nfts.map((item) => (
+                <div key={item.id}>
+                  <NftCard item={item} style="bg-dark" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="main-container section-padding text-center">
+          <h3 className="text-gradient-1/50">no data found!</h3>
+        </div>
+      )}
     </section>
   );
 };

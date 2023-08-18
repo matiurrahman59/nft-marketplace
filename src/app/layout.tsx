@@ -20,7 +20,7 @@ const mainFont = Work_Sans({
 export const metadata: Metadata = {
   title: "NFT-market-place",
   description:
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem ex temporibus recusandae at qui ad nam distinctio, amet quae exercitationem. ",
+    "The world's first and largest web3 marketplace for NFTs and crypto collectibles. Browse, create, buy, sell, and auction NFTs using OpenSea today.",
 };
 
 export default function RootLayout({

@@ -37,7 +37,7 @@ export default function Home() {
             sell art from more than 20k NFT artists.
           </p>
 
-          {/* hidden in sm screen */}
+          {/* show in large screen */}
           <div className="hidden sm:block">
             <div className="inline-block">
               <Button
@@ -77,7 +77,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="relative h-6 w-6 rounded-full">
                 <Image
-                  src="/images/top-creators/Creator-1.png"
+                  src="/images/top-creators/2.png"
                   alt="avater"
                   className="h-6 w-6"
                   fill
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* hidden in tab or large screen */}
+        {/* show in small screen*/}
         <div className="sm:hidden">
           <Button
             label="Get Started"
@@ -306,7 +306,7 @@ export default function Home() {
                   <div className="inline-block">
                     <div className="flex items-center gap-3 rounded-5 bg-secondary px-5 py-[10px]">
                       <Image
-                        src="/images/top-creators/Creator-1.png"
+                        src="/images/top-creators/1.png"
                         alt="avater"
                         width={24}
                         height={24}

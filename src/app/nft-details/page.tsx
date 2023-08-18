@@ -3,7 +3,6 @@ import Link from "next/link";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-import CountDownTimer from "@/components/CountDownTimer";
 import NftCard from "@/components/NftCard";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
@@ -30,14 +29,33 @@ const NftDetails = () => {
             <p className="text-label">Minted on Sep 30, 2022</p>
           </div>
 
+          {/* countdown timer */}
           <div className="sm:col-start-2 sm:flex sm:h-fit sm:justify-end">
-            <CountDownTimer>
-              <div className="pt-5">
-                <button className="scale-animation w-full rounded-5 bg-primary py-3 font-semibold">
-                  Place Bid
-                </button>
+            <div className="rounded-5 bg-blur-1/50 p-[30px] backdrop-blur-sm">
+              <span className="font-spaceMono text-xs">Auction ends in:</span>
+              <div className="mt-[10px] flex justify-between gap-4">
+                <div>
+                  <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                    24
+                  </div>
+                  <div className="font-spaceMono text-xs">Hours</div>
+                </div>
+                <div className="text-[28px] font-semibold leading-10">:</div>
+                <div>
+                  <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                    24
+                  </div>
+                  <div className="font-spaceMono text-xs">Minutes</div>
+                </div>
+                <div className="text-[28px] font-semibold leading-10">:</div>
+                <div>
+                  <div className="font-spaceMono text-[38px] font-semibold leading-[45.6px]">
+                    24
+                  </div>
+                  <div className="font-spaceMono text-xs">Seconds</div>
+                </div>
               </div>
-            </CountDownTimer>
+            </div>
           </div>
 
           <div className="row-start-1 mt-5 space-y-5 sm:mt-0 sm:space-y-[30px]">
@@ -51,7 +69,7 @@ const NftDetails = () => {
               <p className={commonStyle}>Created By</p>
               <div className="mt-[10px] flex items-center gap-3">
                 <Image
-                  src="/images/top-creators/Creator-1.png"
+                  src="/images/top-creators/1.png"
                   alt="nft creator avatar"
                   width={24}
                   height={24}
