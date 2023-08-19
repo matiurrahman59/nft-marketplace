@@ -26,14 +26,15 @@ const NftCard: FC<NftCardProps> = ({ item, style }) => {
       }`}
     >
       <Link href={NAV_Links.nftDetails}>
-        <div className="relative h-56 w-full sm:h-64 lg:h-72">
-          <Image
-            src={item.image}
-            alt="nft images"
-            fill
-            className="object-cover"
-          />
-        </div>
+        {/* <div className="relative h-56 w-full sm:h-64 lg:h-72">
+        </div> */}
+        <Image
+          src={item.image}
+          alt="nft images"
+          width={330}
+          height={296}
+          className="h-56 w-full object-cover sm:h-64 lg:h-72"
+        />
 
         <div className="p-5 pb-6">
           <div className="text-[22px] font-semibold leading-[30px]">

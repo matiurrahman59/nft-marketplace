@@ -17,8 +17,6 @@ const MarketPlace = () => {
   const [query, setQuery] = useState(moreNfts);
   const [nfts] = useDebounce(query, 300);
 
-  console.log(nfts);
-
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = moreNfts.filter((item) =>
       item.title.toLowerCase().includes(e.target.value),

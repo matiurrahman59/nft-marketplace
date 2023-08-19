@@ -35,7 +35,6 @@ const SignUp = () => {
     setLoading(true);
 
     setTimeout(() => {
-      console.log(formFields);
       setLoading(false);
       resetFormFields();
     }, 3000);
@@ -47,20 +46,20 @@ const SignUp = () => {
   return (
     <section>
       <div className="sm:grid sm:grid-cols-2 sm:gap-[30px] lg:gap-10">
-        <div className="relative h-[232px] sm:h-full">
-          <Image
-            src="/images/SignUp-Img-2.png"
-            fill
-            alt="sign up banner image"
-            className="sm:hidden"
-          />
-          <Image
-            src="/images/SignUp-Img.png"
-            fill
-            alt="sign up banner image"
-            className="hidden object-cover sm:flex"
-          />
-        </div>
+        <Image
+          src="/images/SignUp-Img-2.png"
+          width={372}
+          height={232}
+          alt="sign up banner image"
+          className="w-full sm:hidden"
+        />
+        <Image
+          src="/images/SignUp-Img.png"
+          width={610}
+          height={642}
+          alt="sign up banner image"
+          className="hidden w-full object-cover sm:flex sm:h-[520px] lg:h-[642px]"
+        />
 
         <div className="mt-[30px] px-7 pb-10 sm:mr-7 sm:px-0 md:w-[90%]">
           <h3>Create Account</h3>
@@ -115,7 +114,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className={`cursor- mt-[30px] w-full rounded-5 bg-primary py-3 ${
+              className={`scale-animation mt-[30px] w-full rounded-5 bg-primary py-3 ${
                 loading && "cursor-wait opacity-70"
               }`}
               disabled={loading}

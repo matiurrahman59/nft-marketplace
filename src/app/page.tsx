@@ -63,26 +63,24 @@ export default function Home() {
 
         {/* banner image */}
         <div className="pt-10 sm:pt-0">
-          <div className="relative h-[206px] sm:h-[221px] lg:h-[400px]">
-            <Image
-              src="/images/Banner.png"
-              alt="Banner image"
-              fill={true}
-              className="overflow-hidden rounded-t-[20px] object-cover"
-            />
-          </div>
+          <Image
+            src="/images/Banner.png"
+            alt="Banner image"
+            width={510}
+            height={400}
+            className="overflow-hidden rounded-t-[20px] object-cover"
+          />
 
           <div className="space-y-[10px] rounded-b-[20px] bg-secondary p-5">
             <span className="text-[22px] font-bold">Space walking</span>
             <div className="flex items-center gap-3">
-              <div className="relative h-6 w-6 rounded-full">
-                <Image
-                  src="/images/top-creators/2.png"
-                  alt="avater"
-                  className="h-6 w-6"
-                  fill
-                />
-              </div>
+              <Image
+                src="/images/top-creators/2.png"
+                alt="avater"
+                width={24}
+                height={24}
+                className="rounded-full"
+              />
               <span className="text-base font-normal">Animakid</span>
             </div>
           </div>
@@ -115,31 +113,29 @@ export default function Home() {
         <div className="grid gap-10 pt-10 md:grid-cols-2 md:gap-[30px] lg:grid-cols-3 lg:pt-[60px]">
           {trendingCollection.map((item) => (
             <div key={item.id}>
-              <div className="scale-animation relative h-[315px] md:h-[330px] ">
-                <Image
-                  src={item.images[0]}
-                  fill
-                  className="rounded-2xl object-cover"
-                  alt={`trending collection image ${item.id}`}
-                />
-              </div>
+              <Image
+                src={item.images[0]}
+                width={330}
+                height={330}
+                objectFit="cover"
+                className="scale-animation h-[315px] w-full rounded-2xl md:h-[300px]"
+                alt={`trending collection image ${item.id}`}
+              />
               <div className="my-[15px] grid grid-cols-3 gap-[15px]">
-                <div className="scale-animation relative h-[95px] w-[95px] md:h-[100px]">
-                  <Image
-                    src={item.images[1]}
-                    fill
-                    alt={`trending collection image ${item.id}`}
-                    className=" rounded-2xl object-cover "
-                  />
-                </div>
-                <div className="scale-animation relative h-[95px] w-[95px] md:h-[100px]">
-                  <Image
-                    src={item.images[2]}
-                    fill
-                    alt={`trending collection image ${item.id}`}
-                    className=" rounded-2xl object-cover "
-                  />
-                </div>
+                <Image
+                  src={item.images[1]}
+                  width={95}
+                  height={95}
+                  alt={`trending collection image ${item.id}`}
+                  className="scale-animation h-[95px] rounded-2xl object-cover md:h-[100px]"
+                />
+                <Image
+                  src={item.images[2]}
+                  width={95}
+                  height={95}
+                  alt={`trending collection image ${item.id}`}
+                  className="scale-animation rounded-2xl object-cover sm:h-[100px]"
+                />
                 <div className="scale-animation grid cursor-pointer place-content-center rounded-2xl bg-primary font-spaceMono font-bold sm:text-[22px]">
                   <span>1025+</span>
                 </div>
@@ -150,14 +146,13 @@ export default function Home() {
                   {item.title}
                 </span>
                 <div className="mt-[10px] flex gap-3">
-                  <div className="relative h-6 w-6">
-                    <Image
-                      src={item.avatar}
-                      fill
-                      className=" object-cover"
-                      alt="user image"
-                    />
-                  </div>
+                  <Image
+                    src={item.avatar}
+                    width={24}
+                    height={24}
+                    className="object-cover"
+                    alt="user image"
+                  />
                   <span>{item.userName}</span>
                 </div>
               </div>
@@ -195,8 +190,9 @@ export default function Home() {
                 <Image
                   src={user.avatar}
                   alt={`no. ${user.id} top creator`}
-                  fill
-                  className="rounded-full"
+                  width={120}
+                  height={120}
+                  className="h-full w-full rounded-full"
                 />
               </div>
 
@@ -235,20 +231,22 @@ export default function Home() {
             >
               <div className="overflow-hidden rounded-5 bg-secondary">
                 <div className="relative">
-                  <div className="relative grid h-[142px] place-content-center overflow-hidden lg:h-[240px]">
+                  <div className="relative h-[142px] overflow-hidden lg:h-[240px]">
                     <Image
                       src={item.bgImageUrl}
                       alt={`nft ${item.title} background image`}
                       priority
-                      fill
+                      width={240}
+                      height={240}
                       className="object-cover transition duration-300 group-hover:blur-md "
                     />
-
-                    <div className="relative hidden h-20 w-20 group-hover:block ">
+                    <div className="absolute inset-0 grid place-content-center">
                       <Image
                         src={item.iconImageUrl}
                         alt={`nft ${item.title} category icon image`}
-                        fill
+                        width={100}
+                        height={100}
+                        className="hidden h-20 w-20 group-hover:block lg:h-[100px] lg:w-[100px]"
                       />
                     </div>
                   </div>
@@ -296,11 +294,63 @@ export default function Home() {
 
       {/* HIGHLIGHT NFT SECTION */}
       <section>
-        <div className="relative h-[593px] w-full bg-[url('/images/mashroom-sm.png')]  bg-cover sm:h-[630px] sm:bg-[url('/images/mashroom-lg.png')]">
+        <div className="relative h-[593px] w-full sm:h-[600px]">
+          <Image
+            src="/images/mashroom-sm.png"
+            alt="nft"
+            fill
+            className="object-cover sm:hidden"
+          />
+          <Image
+            src="/images/mashroom-lg.png"
+            alt="nft"
+            fill
+            className="hidden object-cover sm:block"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-[#a259ff00] to-primary" />
 
-          <div className="sm:main-container absolute inset-0 z-10">
-            <div className="px-7 pb-10 pt-[120px] sm:pt-[360px]">
+          <div className="sm:main-container absolute inset-0 z-10 flex items-end px-7">
+            <div className="flex-1 pb-10">
+              <div className="flex flex-col gap-[30px] sm:flex-row sm:items-end sm:justify-between sm:gap-0">
+                <div className="space-y-[30px]">
+                  <div className="inline-block">
+                    <div className="flex items-center gap-3 rounded-5 bg-secondary px-5 py-[10px]">
+                      <Image
+                        src="/images/top-creators/1.png"
+                        alt="avater"
+                        width={24}
+                        height={24}
+                        className="object-cover"
+                      />
+                      <span>Shroomie</span>
+                    </div>
+                  </div>
+                  <h2>
+                    Magic <br className="sm:hidden" /> Mashrooms
+                  </h2>
+                  <div className="hidden sm:inline-block">
+                    <Button
+                      label="See NFT"
+                      href={NAV_Links.nftDetails}
+                      style="bg-white text-secondary px-[50px]"
+                    >
+                      <FiEye size={20} className="text-primary" />
+                    </Button>
+                  </div>
+                </div>
+
+                <CountDownTimer />
+              </div>
+
+              <Button
+                label="See NFT"
+                href={NAV_Links.nftDetails}
+                style="bg-white text-secondary sm:hidden mt-[30px]"
+              >
+                <FiEye size={20} className="text-primary" />
+              </Button>
+            </div>
+            {/* <div className="px-7 pb-10 pt-[120px] sm:pt-[360px]">
               <div className="flex flex-col gap-[30px] sm:flex-row sm:items-end sm:justify-between sm:gap-0">
                 <div className="space-y-[30px]">
                   <div className="inline-block">
@@ -338,7 +388,7 @@ export default function Home() {
               >
                 <FiEye size={20} className="text-primary" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -354,18 +404,17 @@ export default function Home() {
           {workFlow.map((item) => (
             <div
               key={item.id}
-              className="flexCenter gap-5 rounded-5 bg-secondary  p-5 md:flex-col md:p-0 "
+              className="flex items-center gap-5 rounded-5 bg-secondary p-5 md:flex-col md:px-5 md:pb-[30px] md:pt-[10px]"
             >
-              <div className="relative h-[100px] w-[100px]  md:h-[160px] md:w-[160px] lg:h-[250px] lg:w-[250px]">
-                <Image
-                  src={item.imgUrl}
-                  fill
-                  className=" object-fill"
-                  alt="workflow image "
-                />
-              </div>
+              <Image
+                src={item.imgUrl}
+                width={250}
+                height={250}
+                alt="workflow image"
+                className="md:h-[160px] md:w-[160px] lg:h-[250px] lg:w-[250px]"
+              />
 
-              <div className=" md:p-5 md:pb-[30px] lg:p-[30px] lg:pt-[20px]">
+              <div>
                 <h5 className="mb-[10px] md:text-center">{item.title}</h5>
                 <p className="text-xs opacity-80 md:text-center lg:text-base">
                   {item.description}
@@ -378,16 +427,14 @@ export default function Home() {
 
       {/* NEWSLETTER SECTION */}
       <section className="section-padding main-container">
-        <div className="items-center rounded-5 sm:grid sm:grid-cols-2 sm:gap-[30px] sm:bg-secondary sm:px-[30px] sm:py-10 lg:gap-20 lg:p-[60px]">
-          <div className="relative h-[255px] md:h-[280px] lg:h-[310px]">
-            <Image
-              src="/images/NewsLetter.png"
-              alt="Newsletter image"
-              priority
-              fill
-              className="h-full w-full rounded-5 object-cover"
-            />
-          </div>
+        <div className="items-center rounded-5 sm:grid sm:grid-cols-2 sm:items-center sm:gap-[30px] sm:bg-secondary sm:px-[30px] sm:py-10 lg:gap-20 lg:p-[60px]">
+          <Image
+            src="/images/NewsLetter.png"
+            alt="Newsletter image"
+            width={425}
+            height={310}
+            className="h-[255px] rounded-5 object-cover md:h-[280px] lg:h-[310px]"
+          />
 
           <div className="pt-[30px] sm:pt-0">
             <h3 className="capitalize">

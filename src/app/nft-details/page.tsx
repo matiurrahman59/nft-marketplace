@@ -154,6 +154,14 @@ const NftDetails = () => {
               </div>
             ))}
           </div>
+
+          <Button
+            label="Go To Artist Page"
+            href="/artist"
+            style="ring-2 mt-10 ring-primary sm:hidden"
+          >
+            <ArrowRightIcon className="h-5 w-5 text-primary" />
+          </Button>
         </div>
       </div>
     </section>

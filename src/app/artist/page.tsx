@@ -39,7 +39,7 @@ const Artist = () => {
         />
       </div>
 
-      <div className="main-container ">
+      <div className="main-container">
         <div className="relative">
           <Image
             src="/images/artist.png"
