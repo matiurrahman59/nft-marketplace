@@ -33,7 +33,7 @@ const Navbar = () => {
       {/* mobile menu container */}
       <div
         onClick={() => setMenuOpen(false)}
-        className={`absolute inset-0 z-50 h-screen w-full justify-end bg-dark/50 backdrop-blur-sm ${
+        className={`fixed inset-0 z-50 h-screen w-full justify-end bg-dark/50 backdrop-blur-sm ${
           menuOpen ? "flex" : "hidden"
         }`}
       >

@@ -63,13 +63,16 @@ export default function Home() {
 
         {/* banner image */}
         <div className="pt-10 sm:pt-0">
-          <Image
-            src="/images/Banner.png"
-            alt="Banner image"
-            width={510}
-            height={400}
-            className="overflow-hidden rounded-t-[20px] object-cover"
-          />
+          <div className="relative h-[206px] w-full lg:h-[221px] xl:h-[401px]">
+            <Image
+              src="/images/Banner.png"
+              alt="Banner image"
+              fill
+              priority
+              className="rounded-t-[20px] object-cover"
+              sizes="(min-width: 1280px) 480px, (min-width: 1040px) 424px, (min-width: 640px) calc(50vw - 71px), calc(100vw - 56px)"
+            />
+          </div>
 
           <div className="space-y-[10px] rounded-b-[20px] bg-secondary p-5">
             <span className="text-[22px] font-bold">Space walking</span>
@@ -113,29 +116,34 @@ export default function Home() {
         <div className="grid gap-10 pt-10 md:grid-cols-2 md:gap-[30px] lg:grid-cols-3 lg:pt-[60px]">
           {trendingCollection.map((item) => (
             <div key={item.id}>
-              <Image
-                src={item.images[0]}
-                width={330}
-                height={330}
-                objectFit="cover"
-                className="scale-animation h-[315px] w-full rounded-2xl md:h-[300px]"
-                alt={`trending collection image ${item.id}`}
-              />
+              <div className="relative h-[315px] md:h-[330px]">
+                <Image
+                  src={item.images[0]}
+                  alt={`trending collection image ${item.id}`}
+                  fill
+                  className="scale-animation rounded-2xl"
+                  sizes="(min-width: 1280px) 321px, (min-width: 1040px) 284px, (min-width: 780px) calc(50vw - 71px), (min-width: 640px) calc(100vw - 112px), calc(100vw - 56px)"
+                />
+              </div>
               <div className="my-[15px] grid grid-cols-3 gap-[15px]">
-                <Image
-                  src={item.images[1]}
-                  width={95}
-                  height={95}
-                  alt={`trending collection image ${item.id}`}
-                  className="scale-animation h-[95px] rounded-2xl object-cover md:h-[100px]"
-                />
-                <Image
-                  src={item.images[2]}
-                  width={95}
-                  height={95}
-                  alt={`trending collection image ${item.id}`}
-                  className="scale-animation rounded-2xl object-cover sm:h-[100px]"
-                />
+                <div className="relative h-[95px] md:h-[100px]">
+                  <Image
+                    src={item.images[1]}
+                    alt={`trending collection image ${item.id}`}
+                    fill
+                    className="scale-animation rounded-2xl object-cover"
+                    sizes="(min-width: 1280px) 97px, (min-width: 1040px) 85px, (min-width: 780px) calc(16.67vw - 34px), (min-width: 640px) calc(33.33vw - 47px), calc(33.44vw - 29px)"
+                  />
+                </div>
+                <div className="relative h-[95px] md:h-[100px]">
+                  <Image
+                    src={item.images[2]}
+                    alt={`trending collection image ${item.id}`}
+                    fill
+                    className="scale-animation rounded-2xl object-cover sm:h-[100px]"
+                    sizes="(min-width: 1280px) 97px, (min-width: 1040px) 85px, (min-width: 780px) calc(16.67vw - 34px), (min-width: 640px) calc(33.33vw - 47px), calc(33.44vw - 29px)"
+                  />
+                </div>
                 <div className="scale-animation grid cursor-pointer place-content-center rounded-2xl bg-primary font-spaceMono font-bold sm:text-[22px]">
                   <span>1025+</span>
                 </div>
@@ -187,13 +195,15 @@ export default function Home() {
                 <div className="absolute -left-2 -top-2 z-10 grid h-[30px] w-[30px] place-content-center rounded-full bg-dark text-label lg:-left-10 lg:top-0">
                   {user.id}
                 </div>
-                <Image
-                  src={user.avatar}
-                  alt={`no. ${user.id} top creator`}
-                  width={120}
-                  height={120}
-                  className="h-full w-full rounded-full"
-                />
+                <div className="relative h-[60px] w-[60px] lg:h-[120px] lg:w-[120px]">
+                  <Image
+                    src={user.avatar}
+                    alt={`no. ${user.id} top creator`}
+                    fill
+                    sizes="120px"
+                    className="rounded-full"
+                  />
+                </div>
               </div>
 
               <div className="lg:text-center">
@@ -235,10 +245,9 @@ export default function Home() {
                     <Image
                       src={item.bgImageUrl}
                       alt={`nft ${item.title} background image`}
-                      priority
-                      width={240}
-                      height={240}
-                      className="object-cover transition duration-300 group-hover:blur-md "
+                      fill
+                      className="object-cover transition duration-300 group-hover:blur-md"
+                      sizes="(min-width: 1280px) 234px, (min-width: 1080px) 206px, (min-width: 780px) calc(21.79vw - 25px), (min-width: 640px) calc(50vw - 66px), calc(50vw - 38px)"
                     />
                     <div className="absolute inset-0 grid place-content-center">
                       <Image
@@ -350,45 +359,6 @@ export default function Home() {
                 <FiEye size={20} className="text-primary" />
               </Button>
             </div>
-            {/* <div className="px-7 pb-10 pt-[120px] sm:pt-[360px]">
-              <div className="flex flex-col gap-[30px] sm:flex-row sm:items-end sm:justify-between sm:gap-0">
-                <div className="space-y-[30px]">
-                  <div className="inline-block">
-                    <div className="flex items-center gap-3 rounded-5 bg-secondary px-5 py-[10px]">
-                      <Image
-                        src="/images/top-creators/1.png"
-                        alt="avater"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Shroomie</span>
-                    </div>
-                  </div>
-                  <h2>
-                    Magic <br className="sm:hidden" /> Mashrooms
-                  </h2>
-                  <div className="hidden sm:inline-block">
-                    <Button
-                      label="See NFT"
-                      href={NAV_Links.nftDetails}
-                      style="bg-white text-secondary px-[50px]"
-                    >
-                      <FiEye size={20} className="text-primary" />
-                    </Button>
-                  </div>
-                </div>
-
-                <CountDownTimer />
-              </div>
-
-              <Button
-                label="See NFT"
-                href={NAV_Links.nftDetails}
-                style="bg-white text-secondary sm:hidden mt-[30px]"
-              >
-                <FiEye size={20} className="text-primary" />
-              </Button>
-            </div> */}
           </div>
         </div>
       </section>
@@ -408,10 +378,10 @@ export default function Home() {
             >
               <Image
                 src={item.imgUrl}
-                width={250}
-                height={250}
+                width={208}
+                height={208}
                 alt="workflow image"
-                className="md:h-[160px] md:w-[160px] lg:h-[250px] lg:w-[250px]"
+                className="h-20 w-20 md:h-32 md:w-32 xl:h-52 xl:w-52"
               />
 
               <div>
@@ -428,13 +398,15 @@ export default function Home() {
       {/* NEWSLETTER SECTION */}
       <section className="section-padding main-container">
         <div className="items-center rounded-5 sm:grid sm:grid-cols-2 sm:items-center sm:gap-[30px] sm:bg-secondary sm:px-[30px] sm:py-10 lg:gap-20 lg:p-[60px]">
-          <Image
-            src="/images/NewsLetter.png"
-            alt="Newsletter image"
-            width={425}
-            height={310}
-            className="h-[255px] rounded-5 object-cover md:h-[280px] lg:h-[310px]"
-          />
+          <div className="relative h-[255px] w-full md:h-[280px] lg:h-[310px]">
+            <Image
+              src="/images/NewsLetter.png"
+              alt="Newsletter image"
+              fill
+              className="rounded-5 object-cover"
+              sizes="(min-width: 1280px) 412px, (min-width: 1040px) 356px, (min-width: 640px) calc(50vw - 101px), calc(100vw - 56px)"
+            />
+          </div>
 
           <div className="pt-[30px] sm:pt-0">
             <h3 className="capitalize">

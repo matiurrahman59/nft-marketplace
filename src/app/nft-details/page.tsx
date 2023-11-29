@@ -18,6 +18,7 @@ const NftDetails = () => {
           src="/images/nft-details.png"
           alt="nft details"
           fill
+          priority
           className="object-cover"
         />
       </div>

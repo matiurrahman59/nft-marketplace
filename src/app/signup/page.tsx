@@ -47,18 +47,12 @@ const SignUp = () => {
     <section>
       <div className="sm:grid sm:grid-cols-2 sm:gap-[30px] lg:gap-10">
         <Image
-          src="/images/SignUp-Img-2.png"
-          width={372}
-          height={232}
-          alt="sign up banner image"
-          className="w-full sm:hidden"
-        />
-        <Image
           src="/images/SignUp-Img.png"
           width={610}
           height={642}
+          priority
           alt="sign up banner image"
-          className="hidden w-full object-cover sm:flex sm:h-[520px] lg:h-[642px]"
+          className="h-[232px] w-full object-cover sm:h-[615px] xl:h-[691px]"
         />
 
         <div className="mt-[30px] px-7 pb-10 sm:mr-7 sm:px-0 md:w-[90%]">

@@ -19,20 +19,16 @@ const ConnectWallet = () => {
   return (
     <section>
       <div className="sm:grid sm:grid-cols-2 sm:gap-[30px] lg:gap-10">
-        <Image
-          src="/images/wallet-sm.png"
-          width={372}
-          height={232}
-          alt="sign up banner image"
-          className="w-full sm:hidden"
-        />
-        <Image
-          src="/images/wallet-lg.png"
-          width={610}
-          height={642}
-          alt="sign up banner image"
-          className="hidden w-full object-cover sm:flex sm:h-[520px] lg:h-[642px]"
-        />
+        <div className="relative h-[232px] sm:h-[530px] lg:h-[642px]">
+          <Image
+            src="/images/wallet-lg.png"
+            fill
+            priority
+            sizes="(min-width: 640px) 49.79vw, 100vw"
+            alt="sign up banner image"
+            className="object-cover"
+          />
+        </div>
 
         <div className="px-7 py-10 sm:mr-7 sm:px-0 md:w-[90%] lg:py-20 2xl:w-[60%]">
           <h3>Create Account</h3>

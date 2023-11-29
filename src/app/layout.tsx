@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Space_Mono, Work_Sans } from "next/font/google";
+import { Space_Mono } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

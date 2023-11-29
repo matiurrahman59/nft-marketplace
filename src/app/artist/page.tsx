@@ -35,6 +35,7 @@ const Artist = () => {
           src="/images/artist-banner.png"
           alt="Artist Banner"
           fill
+          priority
           className="object-cover"
         />
       </div>
@@ -88,7 +89,6 @@ const Artist = () => {
               </div>
             </div>
           </div>
-          {/* links */}
         </div>
       </div>
 
